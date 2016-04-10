@@ -1,0 +1,100 @@
+using System.IO;
+
+namespace LazyLoading
+{
+    //Lazy Loading
+    class LazyLogger
+    {
+        StreamWriter outStream;
+        static LazyLogger instanceOfLogger;   
+        int logNumber = 0;
+        public void InitializeLogging()
+        {
+            outStream = new StreamWriter("myLog.txt");
+        }
+        public void ShutdownLogging()
+        {
+            outStream.Close();
+        }
+        public void LogMessage(string message)
+        {
+            outStream.WriteLine((logNumber++) + ": " + message);
+        }
+        public static LazyLogger InstanceOfLogger
+        {
+            get
+            {
+                if (instanceOfLogger == null)
+                    instanceOfLogger = new LazyLogger();
+                return instanceOfLogger;
+            }
+        }
+    }
+    //static pattern
+    static class StaticLogger
+    {
+        static StreamWriter outStream;        
+        static int logNumber = 0;
+        static public void InitializeLogging()
+        {
+            outStream = new StreamWriter("myLog.txt");
+        }
+        static public void ShutdownLogging()
+        {
+            outStream.Close();
+        }
+        static public void LogMessage(string message)
+        {
+            outStream.WriteLine((logNumber++) + ": " + message);
+        }
+    }
+    //singleton
+    class SingletonLogger
+    {
+        StreamWriter outStream;
+        int logNumber = 0;
+        static SingletonLogger instanceOfLogger = new SingletonLogger();
+        public static SingletonLogger InstanceOfLogger
+        {
+            get { return instanceOfLogger; }            
+        }
+
+        SingletonLogger()
+        {
+
+        }
+        public void InitializeLogging()
+        {
+            outStream = new StreamWriter("myLog.txt");
+        }
+        public void ShutdownLogging()
+        {
+            outStream.Close();
+        }
+        public void LogMessage(string message)
+        {
+            outStream.WriteLine((logNumber++) + ": " + message);
+        }
+        
+    }
+    class Program
+    {        
+        static void Main(string[] args)
+        {
+            //lazyloading
+            LazyLogger.InstanceOfLogger.InitializeLogging();
+            LazyLogger.InstanceOfLogger.LogMessage("log message");
+            LazyLogger.InstanceOfLogger.LogMessage("deal with it");
+            LazyLogger.InstanceOfLogger.ShutdownLogging();
+            //static
+            StaticLogger.InitializeLogging();
+            StaticLogger.LogMessage("log message");
+            StaticLogger.LogMessage("deal with it");
+            StaticLogger.ShutdownLogging();
+            //singleton
+            SingletonLogger.InstanceOfLogger.InitializeLogging();
+            SingletonLogger.InstanceOfLogger.LogMessage("singleton..");
+            SingletonLogger.InstanceOfLogger.ShutdownLogging();
+        }
+    }
+}
