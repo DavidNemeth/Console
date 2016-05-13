@@ -1,2 +1,1 @@
-# Console
-C# console menu
+You will find console applications here (surprise-surprise).
