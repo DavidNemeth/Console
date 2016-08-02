@@ -1,0 +1,9 @@
+C:\Users\David\Desktop\scrachpad\fordelete\GameEntries\GameEntries\bin\Debug\GameEntries.exe.config
+C:\Users\David\Desktop\scrachpad\fordelete\GameEntries\GameEntries\bin\Debug\GameEntries.exe
+C:\Users\David\Desktop\scrachpad\fordelete\GameEntries\GameEntries\bin\Debug\GameEntries.pdb
+C:\Users\David\Desktop\scrachpad\fordelete\GameEntries\GameEntries\obj\Debug\GameEntries.csprojResolveAssemblyReference.cache
+C:\Users\David\Desktop\scrachpad\fordelete\GameEntries\GameEntries\obj\Debug\GameEntries.exe
+C:\Users\David\Desktop\scrachpad\fordelete\GameEntries\GameEntries\obj\Debug\GameEntries.pdb
+C:\Users\David\Source\Repos\Console\GameEntries\GameEntries\bin\Debug\GameEntries.exe.config
+C:\Users\David\Source\Repos\Console\GameEntries\GameEntries\obj\Debug\GameEntries.exe
+C:\Users\David\Source\Repos\Console\GameEntries\GameEntries\obj\Debug\GameEntries.pdb
